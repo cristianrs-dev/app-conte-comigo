@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "./firebase"; // ajuste o caminho se necessário
+import { db } from "./firebase"; 
 
 export default function DoacaoForm({ navigation, doacoes, setDoacoes }) {
   const [nome, setNome] = useState('');

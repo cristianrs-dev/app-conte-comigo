@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, FlatList, StyleSheet, ScrollView, Dimensions } from "react-native";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "./firebase"; // seu arquivo firebase.js
+import { db } from "./firebase"; 
 import { BarChart, PieChart } from "react-native-chart-kit";
 
 export default function Dashboard() {
