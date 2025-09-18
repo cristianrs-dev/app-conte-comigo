@@ -1,20 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+
+// Suas telas
+import DoacaoForm from "./DoacaoForm";
+import ListaDoacoes from "./ListaDoacoes";
+import Dashboard from "./Dashboard";
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Drawer.Navigator
+        initialRouteName="Formulário de Doação"
+        screenOptions={{
+          headerStyle: { backgroundColor: "#2e7d32" },
+          headerTintColor: "#fff",
+          headerTitleStyle: { fontWeight: "bold" },
+        }}
+      >
+        <Drawer.Screen name="Formulário de Doação" component={DoacaoForm} />
+        <Drawer.Screen name="ListaDoações" component={ListaDoacoes} />
+        <Drawer.Screen name="Dashboard" component={Dashboard} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
